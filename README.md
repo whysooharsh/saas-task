@@ -90,12 +90,17 @@ npm start
 ## Screenshots
 
 1. Landing Page Hero
+![alt text](image.png)
 2. Feature Showcase
+![alt text](image-1.png)
 3. Dashboard Overview
+![alt text](image-2.png)
 4. Users Management
+![alt text](image-4.png)
 5. User Detail Modal
+![alt text](image-3.png)
 6. Settings Page
-
+![alt text](image-5.png)
 ## Technical Decisions & Tradeoffs
 
 ### Technology Stack
