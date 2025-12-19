@@ -47,16 +47,15 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="h-screen flex overflow-hidden" style={{ backgroundColor: '#0a0a0a' }}>
+    <div className="min-h-screen flex flex-col lg:flex-row overflow-x-hidden" style={{ backgroundColor: '#0a0a0a' }}>
       {/* Left Side - Form */}
-      <div className="flex-1 flex items-center justify-center px-8 lg:px-16">
-        <div style={{ width: '359px' }}>
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-16 py-8">
+        <div className="w-full max-w-md" style={{ maxWidth: '400px' }}>
           {/* Register Heading */}
-          <h1 style={{
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl" style={{
             fontFamily: 'Poppins, sans-serif',
             fontWeight: 600,
-            fontSize: '48px',
-            lineHeight: '80px',
+            lineHeight: '1.2',
             letterSpacing: '0%',
             color: '#FFFFFF',
             marginBottom: '12px'
@@ -64,12 +63,11 @@ export default function SignupPage() {
             Register
           </h1>
           
-          <p style={{
+          <p className="text-sm sm:text-base" style={{
             fontFamily: 'Poppins, sans-serif',
-            fontSize: '14px',
             lineHeight: '1.5',
             color: '#9E9E9E',
-            marginBottom: '24px'
+            marginBottom: '20px'
           }}>
             A good design is not only aesthetically pleasing, but also functional.
           </p>
@@ -244,8 +242,8 @@ export default function SignupPage() {
 
       {/* Right Side - Image Grid - 3 columns */}
       <div className="hidden lg:flex items-center" style={{ width: '694px', height: '100vh', overflow: 'hidden' }}>
-        <div className="grid grid-cols-3 gap-3 p-4" style={{ width: '100%' }}>
-          {/* Column 1 */}
+      {/* Right Side - Image Grid - 3 columns */}
+      <div className="hidden lg:flex items-center" style={{ width: '50%', maxWidth: '694px', minHeight: '600px', overflow: 'hidden' }}>
           <div className="flex flex-col gap-3">
             <div style={{ height: '100px', backgroundColor: '#18181C', borderRadius: '16px' }}></div>
             <div style={{ 

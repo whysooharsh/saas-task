@@ -46,7 +46,7 @@ export default function HomePage() {
     return (
         <div className="min-h-screen bg-black text-white" style={{ backgroundColor: '#000000' }}>
             <motion.nav 
-                className="fixed top-0 left-0 right-0 z-50 px-8 py-6"
+                className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4 sm:py-6"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -56,22 +56,23 @@ export default function HomePage() {
                         className="flex items-center space-x-2"
                         whileHover={{ scale: 1.05 }}
                     >
-                        <svg width="41" height="33" viewBox="0 0 41 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="32" height="26" viewBox="0 0 41 33" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-[41px] sm:h-[33px]">
                             <path d="M38.6885 19.9414C35.7245 17.0666 30.8972 17.1435 27.9288 20.1105L25.7447 22.2936L23.6091 20.1589L27.6673 16.1025C31.1543 12.6171 31.1543 6.94436 27.6673 3.459L26.8258 2.61786C25.1339 0.92899 22.8884 0 20.5 0C18.1116 0 15.8639 0.92899 14.1764 2.61786L13.3349 3.459C9.84791 6.94436 9.84791 12.6171 13.3349 16.1025L17.3931 20.1589L15.2574 22.2936L12.9855 20.0227C11.5024 18.5403 9.55568 17.8001 7.60675 17.8001C5.65782 17.8001 3.71109 18.5403 2.22797 20.0227C0.790997 21.4612 0 23.3697 0 25.4012C0 27.4327 0.790997 29.3411 2.22797 30.7775C3.66275 32.2116 5.57213 33 7.60675 33C9.64137 33 11.5507 32.2116 12.9855 30.7775L15.2574 28.5066L17.5843 30.8368C18.3621 31.6142 19.3948 32.0447 20.4956 32.0447C21.5964 32.0447 22.6313 31.6164 23.4091 30.8389L25.7447 28.5044L27.9288 30.6874C29.3965 32.1545 31.352 32.9627 33.4328 32.9627C35.5136 32.9627 37.2867 32.2138 38.6885 30.8565C40.1782 29.4114 41 27.4722 41 25.399C41 23.3258 40.1782 21.3865 38.6885 19.9414ZM9.87867 27.6698C9.27224 28.276 8.46586 28.6076 7.60675 28.6076C6.74764 28.6076 5.94126 28.2738 5.33483 27.6698C4.7284 27.0659 4.39443 26.2577 4.39443 25.399C4.39443 24.5403 4.7284 23.7343 5.33483 23.1281C5.94126 22.522 6.74764 22.1881 7.60675 22.1881C8.46586 22.1881 9.27224 22.522 9.87867 23.1281L12.1506 25.399L9.87867 27.6698ZM20.4978 27.5381L19.7156 26.7562L18.3621 25.4012L20.4758 23.2862L20.6516 23.4202L22.6313 25.399L20.4934 27.5359L20.4978 27.5381ZM21.9875 15.5688L20.5022 17.0534L16.4439 12.9971C14.6708 11.2247 14.6708 8.33895 16.4439 6.56442L17.2855 5.72328C18.1446 4.86457 19.2871 4.39019 20.5022 4.39019C21.7173 4.39019 22.8598 4.86237 23.7189 5.72328L24.5604 6.56442C26.3336 8.33675 26.3336 11.2225 24.5604 12.9971L21.9875 15.5688ZM35.63 27.705C35.0258 28.2914 34.2348 28.5813 33.4328 28.5813C32.5715 28.5813 31.7014 28.2474 31.0378 27.5842L28.8538 25.4012L31.0378 23.2182C32.3188 21.9378 34.3798 21.8829 35.63 23.0952C36.2606 23.7057 36.6078 24.5249 36.6078 25.4012C36.6078 26.2775 36.2606 27.0966 35.63 27.7072V27.705Z" fill="white" />
                         </svg>
-                        <span className="text-white text-xl font-bold">Squid</span>
+                        <span className="text-white text-lg sm:text-xl font-bold">Squid</span>
                     </motion.div>
-                    <div className="flex items-center space-x-8">
-                        <Link href="#" className="text-white hover:text-gray-300 transition-colors">
+                    <div className="flex items-center space-x-4 sm:space-x-8">
+                        <Link href="#" className="hidden sm:block text-white hover:text-gray-300 transition-colors">
                             Home
                         </Link>
                         <Link href="/signup">
                             <motion.button 
-                                className="gradient-button px-6 py-2.5 rounded-lg text-white font-medium hover:opacity-90 transition-opacity"
+                                className="gradient-button px-4 py-2 sm:px-6 sm:py-2.5 rounded-lg text-white text-sm sm:text-base font-medium hover:opacity-90 transition-opacity"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Download Template
+                                <span className="hidden sm:inline">Download Template</span>
+                                <span className="sm:hidden">Download</span>
                             </motion.button>
                         </Link>
                     </div>
@@ -114,10 +115,8 @@ export default function HomePage() {
                 </svg>
 
                 <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="text-center max-w-4xl mx-auto relative">
-                        <div className="absolute rounded-full" style={{
-                            width: '538px',
-                            height: '538px',
+                    <div className="text-center max-w-4xl mx-auto relative px-4">
+                        <div className="absolute rounded-full w-full max-w-[538px] aspect-square hidden md:block" style={{
                             top: '-80px',
                             left: '50%',
                             transform: 'translateX(-50%)',
@@ -134,7 +133,7 @@ export default function HomePage() {
                             <img 
                                 src="https://res.cloudinary.com/dlvjrvhak/image/upload/v1766143037/Ellipse_14_ye2gq6.png" 
                                 alt="Ellipse decoration"
-                                className="absolute"
+                                className="absolute hidden md:block"
                                 style={{
                                     top: '-30px',
                                     left: '50%',
@@ -144,22 +143,20 @@ export default function HomePage() {
                                     zIndex : '-1'
                                 }}
                             />
-                            <h1 className="text-white text-center z-40" style={{
+                            <h1 className="text-white text-center z-40 text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-4" style={{
                                 fontFamily: 'Poppins, sans-serif',
                                 fontWeight: 600,
-                                fontSize: '64px',
-                                lineHeight: '80px',
+                                lineHeight: '1.2',
                                 letterSpacing: '0%',
-                                margin: '0 auto 40px'
+                                margin: '0 auto 24px'
                             }}>
                                 Beautiful Landing Page Design for You
                             </h1>
                         </motion.div>
 
                         <motion.p 
-                            className="text-gray-400 text-lg mb-12 max-w-xl mx-auto" 
+                            className="text-gray-400 text-sm sm:text-base lg:text-lg mb-8 sm:mb-12 max-w-xl mx-auto px-4" 
                             style={{
-                                fontSize: '16px',
                                 lineHeight: '1.6'
                             }}
                             initial={{ opacity: 0, y: 30 }}
@@ -173,9 +170,10 @@ export default function HomePage() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                            className="px-4"
                         >
                             <Link href="/signup">
-                                <button className="gradient-button px-10 py-4 rounded-xl text-white font-semibold text-base hover:opacity-90 transition-opacity shadow-2xl">
+                                <button className="gradient-button px-6 py-3 sm:px-10 sm:py-4 rounded-xl text-white font-semibold text-sm sm:text-base hover:opacity-90 transition-opacity shadow-2xl">
                                     Download Template
                                 </button>
                             </Link>
@@ -183,14 +181,14 @@ export default function HomePage() {
                     </div>
 
                     <motion.div 
-                        className="mt-24 relative" 
-                        style={{ paddingBottom: '350px', overflow: 'visible' }}
+                        className="mt-16 sm:mt-24 relative" 
+                        style={{ paddingBottom: '200px', overflow: 'visible' }}
                         initial={{ opacity: 0, y: 80 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
                     >
-                        <div className="relative mx-auto" style={{ maxWidth: '1150px', width: '100%', boxSizing: 'border-box', padding: '0 20px', overflow: 'visible' }}>
-                            <div className="absolute left-1/2 transform -translate-x-1/2 z-0" style={{ bottom: '-280px', width: '100vw', height: '500px', overflow: 'visible' }}>
+                        <div className="relative mx-auto" style={{ maxWidth: '1150px', width: '100%', boxSizing: 'border-box', padding: '0 16px', overflow: 'visible' }}>
+                            <div className="absolute left-1/2 transform -translate-x-1/2 z-0 hidden sm:block" style={{ bottom: '-280px', width: '100vw', height: '500px', overflow: 'visible' }}>
                                 <svg viewBox="0 0 1446 474" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="xMidYMid slice" style={{ overflow: 'visible' }}>
                                     <defs>
                                         <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -202,13 +200,14 @@ export default function HomePage() {
                                 </svg>
                             </div>
 
-                            <div className="relative rounded-[30px] shadow-2xl z-10" style={{
+                            <div className="relative rounded-[20px] sm:rounded-[30px] shadow-2xl z-10" style={{
                                 backgroundColor: '#131415',
-                                height: '616px',
+                                height: 'auto',
+                                minHeight: '400px',
                                 boxSizing: 'border-box',
-                                padding: '24px'
+                                padding: '16px sm:24px'
                             }}>
-                                <div className="grid grid-cols-3 gap-4" style={{ height: '100%' }}>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" style={{ minHeight: '400px' }}>
                                     <div className="rounded-2xl p-4 flex flex-col space-y-3" style={{ backgroundColor: '#222228', overflow: 'hidden' }}>
                                         <div style={{ filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))' }}>
                                             <img src="https://res.cloudinary.com/dlvjrvhak/image/upload/v1766143020/Group_113_uzvzmj.png" alt="Logo" style={{ width: '60px', height: 'auto', objectFit: 'contain' }} />
@@ -286,20 +285,20 @@ export default function HomePage() {
             <section className="relative py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#000000' }}>
                 <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div 
-                        className="mb-16"
+                        className="mb-12 sm:mb-16 px-4"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-5xl font-bold text-white mb-4">Feature Boxes</h2>
-                        <p className="text-gray-400 text-lg max-w-xl">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Feature Boxes</h2>
+                        <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-xl">
                             A good design is not only aesthetically pleasing, but also functional. It should be able to solve the problem
                         </p>
                     </motion.div>
 
                     <motion.div 
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4"
                         variants={staggerContainer}
                         initial="initial"
                         whileInView="animate"
@@ -331,14 +330,10 @@ export default function HomePage() {
                             variants={fadeInUp}
                             whileHover={{ scale: 1.05, y: -10 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className="backdrop-blur-sm rounded-[20px] p-8 transition-all group relative hover:bg-gradient-to-br hover:from-pink-500/20 hover:to-purple-500/20" style={{
-                            width: '350px',
-                            height: '371px',
+                            className="backdrop-blur-sm rounded-[20px] p-6 sm:p-8 transition-all group relative hover:bg-gradient-to-br hover:from-pink-500/20 hover:to-purple-500/20 w-full max-w-sm min-h-[320px] mx-auto" style={{
                             backgroundColor: '#131415'
                         }}>
-                            <div className="rounded-[30px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{
-                                width: '104px',
-                                height: '104px',
+                            <div className="rounded-[30px] w-24 h-24 sm:w-[104px] sm:h-[104px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{
                                 backgroundColor: '#222228'
                             }}>
                                 <img src="https://res.cloudinary.com/dlvjrvhak/image/upload/v1766143020/Group_129_pgxdpw.png" alt="Icon" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
@@ -353,14 +348,10 @@ export default function HomePage() {
                             variants={fadeInUp}
                             whileHover={{ scale: 1.05, y: -10 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className="backdrop-blur-sm rounded-[20px] p-8 transition-all group relative" style={{
-                            width: '350px',
-                            height: '371px',
+                            className="backdrop-blur-sm rounded-[20px] p-6 sm:p-8 transition-all group relative w-full max-w-sm min-h-[320px] mx-auto" style={{
                             background: 'linear-gradient(154.63deg, #FF9898 3.69%, #8054FF 67.86%)'
                         }}>
-                            <div className="rounded-[30px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg" style={{
-                                width: '104px',
-                                height: '104px',
+                            <div className="rounded-[30px] w-24 h-24 sm:w-[104px] sm:h-[104px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg" style={{
                                 background: 'linear-gradient(154.63deg, #FF9898 3.69%, #8054FF 67.86%)'
                             }}>
                                 <img src="https://res.cloudinary.com/dlvjrvhak/image/upload/v1766142990/Group_174_xs3jes.png" alt="Icon" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
@@ -397,14 +388,10 @@ export default function HomePage() {
                             variants={fadeInUp}
                             whileHover={{ scale: 1.05, y: -10 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className="backdrop-blur-sm rounded-[20px] p-8 transition-all group" style={{
-                            width: '350px',
-                            height: '371px',
+                            className="backdrop-blur-sm rounded-[20px] p-6 sm:p-8 transition-all group w-full max-w-sm min-h-[320px] mx-auto" style={{
                             backgroundColor: '#131415'
                         }}>
-                            <div className="rounded-[30px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{
-                                width: '104px',
-                                height: '104px',
+                            <div className="rounded-[30px] w-24 h-24 sm:w-[104px] sm:h-[104px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{
                                 backgroundColor: '#222228'
                             }}>
                                 <img src="https://res.cloudinary.com/dlvjrvhak/image/upload/v1766142990/Group_170_mk9rzu.png" alt="Icon" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
@@ -419,14 +406,10 @@ export default function HomePage() {
                             variants={fadeInUp}
                             whileHover={{ scale: 1.05, y: -10 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className="backdrop-blur-sm rounded-[20px] p-8 transition-all group" style={{
-                            width: '350px',
-                            height: '371px',
+                            className="backdrop-blur-sm rounded-[20px] p-6 sm:p-8 transition-all group w-full max-w-sm min-h-[320px] mx-auto" style={{
                             backgroundColor: '#131415'
                         }}>
-                            <div className="rounded-[30px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{
-                                width: '104px',
-                                height: '104px',
+                            <div className="rounded-[30px] w-24 h-24 sm:w-[104px] sm:h-[104px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{
                                 backgroundColor: '#222228'
                             }}>
                                 <img src="https://res.cloudinary.com/dlvjrvhak/image/upload/v1766142988/Group_161_fyll4i.png" alt="Icon" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
@@ -440,10 +423,10 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#000000' }}>
+            <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#000000' }}>
                 <div className="max-w-7xl mx-auto">
-                    <div className="flex items-center justify-between gap-16">
-                        <div className="relative" style={{ width: '500px', height: '500px', flexShrink: 0 }}>
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+                        <div className="relative order-2 lg:order-1" style={{ width: '100%', maxWidth: '500px', height: '400px', flexShrink: 0 }}>
                             <svg className="absolute inset-0" style={{ width: '100%', height: '100%', pointerEvents: 'none' }}>
                                 <circle cx="250" cy="250" r="100" fill="none" stroke="#1a1a1a" strokeWidth="1" />
                                 <circle cx="250" cy="250" r="150" fill="none" stroke="#1a1a1a" strokeWidth="1" />
@@ -494,16 +477,16 @@ export default function HomePage() {
                         </div>
 
                         <motion.div 
-                            className="max-w-xl"
+                            className="max-w-xl order-1 lg:order-2 text-center lg:text-left"
                             initial={{ opacity: 0, x: 60 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                                 We're here to guide and help you at all times
                             </h2>
-                            <p className="text-gray-400 text-lg mb-8">
+                            <p className="text-gray-400 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8">
                                 A good design is not only aesthetically pleasing, but also functional. It should be able to solve the problem
                             </p>
                             <motion.button 
@@ -518,11 +501,11 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="relative" style={{backgroundColor: '#18181C', width: '100%', paddingTop: '80px', paddingBottom: '250px'}}>
+            <section className="relative" style={{backgroundColor: '#18181C', width: '100%', paddingTop: '60px', paddingBottom: '180px'}}>
                 
                 <div className="max-w-7xl mx-auto px-4">
                     <motion.h2 
-                        className="text-4xl font-bold text-white text-center mb-12"
+                        className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-8 sm:mb-12"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -532,7 +515,7 @@ export default function HomePage() {
                     </motion.h2>
                     
                     <motion.div 
-                        className="flex items-center justify-center gap-8 mb-20"
+                        className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 mb-16 sm:mb-20"
                         variants={staggerContainer}
                         initial="initial"
                         whileInView="animate"
@@ -548,15 +531,16 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <div className="relative" style={{marginTop: '-200px', marginBottom: '-200px', zIndex: 10}}>
+            <div className="relative" style={{marginTop: '-120px', marginBottom: '-120px', zIndex: 10}}>
                 <div className="max-w-7xl mx-auto px-4">
                     <motion.div 
                         className="relative overflow-hidden" 
                         style={{
                             background: 'linear-gradient(135.66deg, #FF9898 14.73%, #8054FF 86.33%)',
-                            width: '1110px',
-                            height: '425px',
-                            borderRadius: '40px',
+                            width: '100%',
+                            maxWidth: '1110px',
+                            minHeight: '300px',
+                            borderRadius: '20px',
                             margin: '0 auto'
                         }}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -564,9 +548,9 @@ export default function HomePage() {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.7 }}
                     >
-                        <div className="relative z-10 p-12">
-                            <p className="text-white/80 text-sm mb-2">Love our Our Tool?</p>
-                            <h3 className="text-white text-4xl font-bold mb-6">
+                        <div className="relative z-10 p-6 sm:p-8 lg:p-12">
+                            <p className="text-white/80 text-xs sm:text-sm mb-2">Love our Our Tool?</p>
+                            <h3 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
                                 Feel Free to Join our<br />15 Days Free Trial
                             </h3>
                             <motion.button 
@@ -589,12 +573,12 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <section className="relative pt-72 pb-24" style={{backgroundColor: '#0a0a0a'}}>
+            <section className="relative pt-48 sm:pt-60 lg:pt-72 pb-16 sm:pb-24" style={{backgroundColor: '#0a0a0a'}}>
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex items-center justify-between gap-16">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
                         <motion.div 
-                            className="relative" 
-                            style={{width: '542px', height: '542px', flexShrink: 0}}
+                            className="relative hidden lg:block" 
+                            style={{width: '100%', maxWidth: '542px', height: 'auto', flexShrink: 0}}
                             initial={{ opacity: 0, x: -80 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
@@ -611,13 +595,13 @@ export default function HomePage() {
                         </motion.div>
                         
                         <motion.div 
-                            className="flex-1 max-w-md"
+                            className="flex-1 w-full max-w-md"
                             initial={{ opacity: 0, x: 80 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Get In Touch</h2>
                             <p className="text-gray-400 mb-8 text-sm">
                                 A good design is not only aesthetically pleasing, but also functional. It should be able to solve the problem
                             </p>
@@ -653,7 +637,7 @@ export default function HomePage() {
             </section>
 
             <motion.footer 
-                style={{ width: '100%', height: '360px', position: 'relative' }}
+                style={{ width: '100%', minHeight: '360px', height: 'auto', position: 'relative' }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -661,14 +645,15 @@ export default function HomePage() {
             >
                 <div style={{ 
                     backgroundColor: '#18181C', 
-                    height: '268px',
+                    minHeight: '268px',
                     width: '100%',
-                    position: 'relative'
+                    position: 'relative',
+                    paddingBottom: '2rem'
                 }}>
-                    <div className="max-w-7xl mx-auto px-4 pt-14">
-                        <div className="flex justify-between">
-                            <div style={{ maxWidth: '303px' }}>
-                                <svg width="41" height="33" viewBox="0 0 41 33" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-6">
+                    <div className="max-w-7xl mx-auto px-4 pt-8 sm:pt-14">
+                        <div className="flex flex-col sm:flex-row justify-between gap-8">
+                            <div style={{ maxWidth: '303px', width: '100%' }}>
+                                <svg width="32" height="26" viewBox="0 0 41 33" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-4 sm:mb-6 sm:w-[41px] sm:h-[33px]">
                                     <path d="M38.6885 19.9414C35.7245 17.0666 30.8972 17.1435 27.9288 20.1105L25.7447 22.2936L23.6091 20.1589L27.6673 16.1025C31.1543 12.6171 31.1543 6.94436 27.6673 3.459L26.8258 2.61786C25.1339 0.92899 22.8884 0 20.5 0C18.1116 0 15.8639 0.92899 14.1764 2.61786L13.3349 3.459C9.84791 6.94436 9.84791 12.6171 13.3349 16.1025L17.3931 20.1589L15.2574 22.2936L12.9855 20.0227C11.5024 18.5403 9.55568 17.8001 7.60675 17.8001C5.65782 17.8001 3.71109 18.5403 2.22797 20.0227C0.790997 21.4612 0 23.3697 0 25.4012C0 27.4327 0.790997 29.3411 2.22797 30.7775C3.66275 32.2116 5.57213 33 7.60675 33C9.64137 33 11.5507 32.2116 12.9855 30.7775L15.2574 28.5066L17.5843 30.8368C18.3621 31.6142 19.3948 32.0447 20.4956 32.0447C21.5964 32.0447 22.6313 31.6164 23.4091 30.8389L25.7447 28.5044L27.9288 30.6874C29.3965 32.1545 31.352 32.9627 33.4328 32.9627C35.5136 32.9627 37.2867 32.2138 38.6885 30.8565C40.1782 29.4114 41 27.4722 41 25.399C41 23.3258 40.1782 21.3865 38.6885 19.9414ZM9.87867 27.6698C9.27224 28.276 8.46586 28.6076 7.60675 28.6076C6.74764 28.6076 5.94126 28.2738 5.33483 27.6698C4.7284 27.0659 4.39443 26.2577 4.39443 25.399C4.39443 24.5403 4.7284 23.7343 5.33483 23.1281C5.94126 22.522 6.74764 22.1881 7.60675 22.1881C8.46586 22.1881 9.27224 22.522 9.87867 23.1281L12.1506 25.399L9.87867 27.6698ZM20.4978 27.5381L19.7156 26.7562L18.3621 25.4012L20.4758 23.2862L20.6516 23.4202L22.6313 25.399L20.4934 27.5359L20.4978 27.5381ZM21.9875 15.5688L20.5022 17.0534L16.4439 12.9971C14.6708 11.2247 14.6708 8.33895 16.4439 6.56442L17.2855 5.72328C18.1446 4.86457 19.2871 4.39019 20.5022 4.39019C21.7173 4.39019 22.8598 4.86237 23.7189 5.72328L24.5604 6.56442C26.3336 8.33675 26.3336 11.2225 24.5604 12.9971L21.9875 15.5688ZM35.63 27.705C35.0258 28.2914 34.2348 28.5813 33.4328 28.5813C32.5715 28.5813 31.7014 28.2474 31.0378 27.5842L28.8538 25.4012L31.0378 23.2182C32.3188 21.9378 34.3798 21.8829 35.63 23.0952C36.2606 23.7057 36.6078 24.5249 36.6078 25.4012C36.6078 26.2775 36.2606 27.0966 35.63 27.7072V27.705Z" fill="white" />
                                 </svg>
                                 <p style={{
@@ -682,7 +667,7 @@ export default function HomePage() {
                                 </p>
                             </div>
                             
-                            <div className="flex gap-20">
+                            <div className="flex flex-wrap gap-8 sm:gap-12 lg:gap-20">
                                 <div>
                                     <h4 style={{
                                         fontFamily: 'Poppins, sans-serif',
@@ -740,10 +725,11 @@ export default function HomePage() {
                 
                 <div style={{ 
                     backgroundColor: '#000000', 
-                    height: '92px',
-                    width: '100%'
+                    minHeight: '92px',
+                    width: '100%',
+                    padding: '1.5rem 0'
                 }}>
-                    <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+                    <div className="max-w-7xl mx-auto px-4 h-full flex flex-col sm:flex-row items-center justify-between gap-4">
                         <p style={{
                             fontFamily: 'Poppins, sans-serif',
                             fontWeight: 400,

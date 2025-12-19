@@ -45,7 +45,7 @@ export default function SettingsPage() {
   }, [user]);
 
   const toggleLocalTheme = () => {
-    const newTheme = localTheme === 'light' ? 'dark' : 'light';
+    const newTheme = localTheme === 'dark' ? 'light' : 'dark';
     setLocalTheme(newTheme);
     localStorage.setItem('settings_page_theme', newTheme);
   };
@@ -66,31 +66,31 @@ export default function SettingsPage() {
   return (
     <ProtectedRoute>
       <DashboardLayout>
-        <div className="max-w-4xl space-y-8" style={{ backgroundColor: localTheme === 'dark' ? '#0a0a0a' : '#ffffff', minHeight: '100vh', margin: '-2rem', padding: '2rem', transition: 'background-color 0.3s' }}>
+        <div className="max-w-4xl space-y-6 sm:space-y-8 px-4 sm:px-0" style={{ backgroundColor: localTheme === 'dark' ? '#0a0a0a' : '#ffffff', minHeight: '100vh', margin: '-2rem', padding: '2rem', transition: 'background-color 0.3s' }}>
           <div>
-            <h1 className="text-3xl font-bold" style={{ fontFamily: 'Poppins, sans-serif', color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>Settings</h1>
-            <p className="mt-2" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
+            <h1 className="text-2xl sm:text-3xl font-bold" style={{ fontFamily: 'Poppins, sans-serif', color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>Settings</h1>
+            <p className="mt-2 text-sm sm:text-base" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
               Manage your account settings and preferences
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#f9fafb', border: localTheme === 'dark' ? 'none' : '1px solid #e5e7eb' }}>
-            <div className="px-6 py-4" style={{ borderBottom: localTheme === 'dark' ? '1px solid #222228' : '1px solid #e5e7eb' }}>
-              <h2 className="text-xl font-semibold flex items-center" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
-                <User className="w-5 h-5 mr-2" />
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#f9fafb', border: localTheme === 'dark' ? 'none' : '1px solid #e5e7eb' }}>
+            <div className="px-4 sm:px-6 py-3 sm:py-4" style={{ borderBottom: localTheme === 'dark' ? '1px solid #222228' : '1px solid #e5e7eb' }}>
+              <h2 className="text-lg sm:text-xl font-semibold flex items-center" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
+                <User className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Profile Information
               </h2>
             </div>
-            <form onSubmit={handleSave} className="p-6 space-y-6">
+            <form onSubmit={handleSave} className="p-4 sm:p-6 space-y-4 sm:space-y-6">
               {saveMessage && (
-                <div className="p-4 rounded-xl" style={{ backgroundColor: '#10B981', opacity: 0.9 }}>
-                  <p className="text-sm text-white">{saveMessage}</p>
+                <div className="p-3 sm:p-4 rounded-lg sm:rounded-xl" style={{ backgroundColor: '#10B981', opacity: 0.9 }}>
+                  <p className="text-xs sm:text-sm text-white">{saveMessage}</p>
                 </div>
               )}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: localTheme === 'dark' ? '#d1d5db' : '#374151' }}>
+                  <label className="block text-xs sm:text-sm font-medium mb-2" style={{ color: localTheme === 'dark' ? '#d1d5db' : '#374151' }}>
                     Full Name
                   </label>
                   <input
@@ -99,13 +99,13 @@ export default function SettingsPage() {
                     onChange={(e) => setSettings({ ...settings, name: e.target.value })}
                     placeholder="Enter your name"
                     required
-                    className="w-full px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-500"
                     style={{ backgroundColor: localTheme === 'dark' ? '#222228' : '#ffffff', border: localTheme === 'dark' ? 'none' : '1px solid #d1d5db', color: localTheme === 'dark' ? '#ffffff' : '#000000' }}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: localTheme === 'dark' ? '#d1d5db' : '#374151' }}>
+                  <label className="block text-xs sm:text-sm font-medium mb-2" style={{ color: localTheme === 'dark' ? '#d1d5db' : '#374151' }}>
                     Email Address
                   </label>
                   <input
@@ -114,14 +114,14 @@ export default function SettingsPage() {
                     onChange={(e) => setSettings({ ...settings, email: e.target.value })}
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-500"
                     style={{ backgroundColor: localTheme === 'dark' ? '#222228' : '#ffffff', border: localTheme === 'dark' ? 'none' : '1px solid #d1d5db', color: localTheme === 'dark' ? '#ffffff' : '#000000' }}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2" style={{ color: localTheme === 'dark' ? '#d1d5db' : '#374151' }}>
+                <label className="block text-xs sm:text-sm font-medium mb-2" style={{ color: localTheme === 'dark' ? '#d1d5db' : '#374151' }}>
                   Bio
                 </label>
                 <textarea
@@ -129,7 +129,7 @@ export default function SettingsPage() {
                   onChange={(e) => setSettings({ ...settings, bio: e.target.value })}
                   placeholder="Tell us about yourself..."
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
                   style={{ backgroundColor: localTheme === 'dark' ? '#222228' : '#ffffff', border: localTheme === 'dark' ? 'none' : '1px solid #d1d5db', color: localTheme === 'dark' ? '#ffffff' : '#000000' }}
                 />
               </div>
@@ -138,29 +138,29 @@ export default function SettingsPage() {
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="flex items-center px-6 py-3 rounded-xl text-white font-medium transition-all hover:opacity-90 disabled:opacity-50"
+                  className="flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl text-white text-sm sm:text-base font-medium transition-all hover:opacity-90 disabled:opacity-50"
                   style={{ background: 'linear-gradient(135.66deg, #FF9898 14.73%, #8054FF 86.33%)' }}
                 >
-                  <Save className="w-4 h-4 mr-2" />
+                  <Save className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   {isSaving ? 'Saving...' : 'Save Changes'}
                 </button>
               </div>
             </form>
           </div>
 
-          <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#f9fafb', border: localTheme === 'dark' ? 'none' : '1px solid #e5e7eb' }}>
-            <div className="px-6 py-4" style={{ borderBottom: localTheme === 'dark' ? '1px solid #222228' : '1px solid #e5e7eb' }}>
-              <h2 className="text-xl font-semibold" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#f9fafb', border: localTheme === 'dark' ? 'none' : '1px solid #e5e7eb' }}>
+            <div className="px-4 sm:px-6 py-3 sm:py-4" style={{ borderBottom: localTheme === 'dark' ? '1px solid #222228' : '1px solid #e5e7eb' }}>
+              <h2 className="text-lg sm:text-xl font-semibold" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
                 Appearance
               </h2>
             </div>
-            <div className="p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
-                  <h3 className="text-base font-medium" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
+                  <h3 className="text-sm sm:text-base font-medium" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
                     Theme
                   </h3>
-                  <p className="text-sm mt-1" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
+                  <p className="text-xs sm:text-sm mt-1" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
                     Switch between light and dark mode
                   </p>
                 </div>
@@ -189,20 +189,20 @@ export default function SettingsPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#f9fafb', border: localTheme === 'dark' ? 'none' : '1px solid #e5e7eb' }}>
-            <div className="px-6 py-4" style={{ borderBottom: localTheme === 'dark' ? '1px solid #222228' : '1px solid #e5e7eb' }}>
-              <h2 className="text-xl font-semibold flex items-center" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
-                <Bell className="w-5 h-5 mr-2" />
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#f9fafb', border: localTheme === 'dark' ? 'none' : '1px solid #e5e7eb' }}>
+            <div className="px-4 sm:px-6 py-3 sm:py-4" style={{ borderBottom: localTheme === 'dark' ? '1px solid #222228' : '1px solid #e5e7eb' }}>
+              <h2 className="text-lg sm:text-xl font-semibold flex items-center" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
+                <Bell className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Notifications
               </h2>
             </div>
-            <div className="p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
-                  <h3 className="text-base font-medium" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
+                  <h3 className="text-sm sm:text-base font-medium" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
                     Email Notifications
                   </h3>
-                  <p className="text-sm mt-1" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
+                  <p className="text-xs sm:text-sm mt-1" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
                     Receive email updates about your account
                   </p>
                 </div>
@@ -228,24 +228,24 @@ export default function SettingsPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#fef2f2', borderColor: '#EF4444', borderWidth: '1px', borderStyle: 'solid' }}>
-            <div className="px-6 py-4" style={{ borderBottom: '1px solid #EF4444' }}>
-              <h2 className="text-xl font-semibold text-red-400 flex items-center">
-                <Trash2 className="w-5 h-5 mr-2" />
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden" style={{ backgroundColor: localTheme === 'dark' ? '#131415' : '#fef2f2', borderColor: '#EF4444', borderWidth: '1px', borderStyle: 'solid' }}>
+            <div className="px-4 sm:px-6 py-3 sm:py-4" style={{ borderBottom: '1px solid #EF4444' }}>
+              <h2 className="text-lg sm:text-xl font-semibold text-red-400 flex items-center">
+                <Trash2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Danger Zone
               </h2>
             </div>
-            <div className="p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                 <div>
-                  <h3 className="text-base font-medium" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
+                  <h3 className="text-sm sm:text-base font-medium" style={{ color: localTheme === 'dark' ? '#ffffff' : '#000000' }}>
                     Delete Account
                   </h3>
-                  <p className="text-sm mt-1" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
+                  <p className="text-xs sm:text-sm mt-1" style={{ color: localTheme === 'dark' ? '#9ca3af' : '#6b7280' }}>
                     Permanently delete your account and all data
                   </p>
                 </div>
-                <button className="px-6 py-3 rounded-xl text-white font-medium bg-red-600 hover:bg-red-700 transition-colors">
+                <button className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl text-white text-sm sm:text-base font-medium bg-red-600 hover:bg-red-700 transition-colors whitespace-nowrap">
                   Delete Account
                 </button>
               </div>

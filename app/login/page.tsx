@@ -34,27 +34,25 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: '#0a0a0a' }}>
-      <div className="flex-1 flex items-center justify-center px-8 lg:px-16">
-        <div style={{ width: '359px' }}>
-          <h1 style={{
+    <div className="min-h-screen flex flex-col lg:flex-row" style={{ backgroundColor: '#0a0a0a' }}>
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-16 py-8">
+        <div className="w-full max-w-md" style={{ maxWidth: '400px' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl" style={{
             fontFamily: 'Poppins, sans-serif',
             fontWeight: 600,
-            fontSize: '48px',
-            lineHeight: '80px',
+            lineHeight: '1.2',
             letterSpacing: '0%',
             color: '#FFFFFF',
-            marginBottom: '16px'
+            marginBottom: '12px'
           }}>
             Login
           </h1>
           
-          <p style={{
+          <p className="text-sm sm:text-base" style={{
             fontFamily: 'Poppins, sans-serif',
-            fontSize: '16px',
             lineHeight: '1.6',
             color: '#9E9E9E',
-            marginBottom: '32px'
+            marginBottom: '24px'
           }}>
             A good design is not only aesthetically pleasing, but also functional.
           </p>
@@ -199,7 +197,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right Side - Image Grid - 3 columns */}
-      <div className="hidden lg:flex items-center" style={{ width: '694px', height: '100vh', overflow: 'hidden' }}>
+      <div className="hidden lg:flex items-center" style={{ width: '50%', maxWidth: '694px', height: '100vh', overflow: 'hidden' }}>
         <div className="grid grid-cols-3 gap-3 p-4" style={{ width: '100%' }}>
           {/* Column 1 */}
           <div className="flex flex-col gap-3">

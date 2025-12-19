@@ -69,11 +69,11 @@ export default function DashboardPage() {
   return (
     <ProtectedRoute>
       <DashboardLayout>
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {/* Header */}
-          <div>
-            <h1 className="text-3xl font-bold text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>Dashboard</h1>
-            <p className="mt-2 text-gray-400">
+          <div className="px-4 sm:px-0">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>Dashboard</h1>
+            <p className="mt-2 text-sm sm:text-base text-gray-400">
               Welcome back! Here's an overview of your platform.
             </p>
           </div>
@@ -96,27 +96,27 @@ export default function DashboardPage() {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
                 {stats.map((stat) => (
                   <div
                     key={stat.name}
-                    className="rounded-2xl p-6 transition-transform hover:scale-105"
+                    className="rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-transform hover:scale-105"
                     style={{ backgroundColor: '#131415' }}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-400">
+                        <p className="text-xs sm:text-sm font-medium text-gray-400">
                           {stat.name}
                         </p>
-                        <p className="mt-2 text-3xl font-bold text-white">
+                        <p className="mt-2 text-2xl sm:text-3xl font-bold text-white">
                           {stat.value}
                         </p>
                       </div>
                       <div 
-                        className="p-3 rounded-xl"
+                        className="p-2 sm:p-3 rounded-lg sm:rounded-xl"
                         style={{ background: stat.gradient }}
                       >
-                        <stat.icon className="w-6 h-6 text-white" />
+                        <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                     </div>
                   </div>
@@ -124,9 +124,9 @@ export default function DashboardPage() {
               </div>
 
               {/* Recent Users */}
-              <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: '#131415' }}>
-                <div className="px-6 py-4" style={{ borderBottom: '1px solid #222228' }}>
-                  <h2 className="text-xl font-semibold text-white">
+              <div className="rounded-xl sm:rounded-2xl overflow-hidden" style={{ backgroundColor: '#131415' }}>
+                <div className="px-4 sm:px-6 py-3 sm:py-4" style={{ borderBottom: '1px solid #222228' }}>
+                  <h2 className="text-lg sm:text-xl font-semibold text-white">
                     Recent Users
                   </h2>
                 </div>
@@ -134,13 +134,13 @@ export default function DashboardPage() {
                   <table className="min-w-full">
                     <thead style={{ backgroundColor: '#18181C' }}>
                       <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                        <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                           Name
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                        <th className="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                           Email
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                        <th className="hidden md:table-cell px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                           Company
                         </th>
                       </tr>
@@ -152,29 +152,29 @@ export default function DashboardPage() {
                           className="hover:bg-white/5 transition-colors"
                           style={{ borderBottom: index < 4 ? '1px solid #222228' : 'none' }}
                         >
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center">
                               <div 
-                                className="w-10 h-10 rounded-full flex items-center justify-center"
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center"
                                 style={{ background: 'linear-gradient(135.66deg, #FF9898 14.73%, #8054FF 86.33%)' }}
                               >
-                                <span className="text-white font-semibold">
+                                <span className="text-white text-sm sm:text-base font-semibold">
                                   {user.name.charAt(0)}
                                 </span>
                               </div>
-                              <div className="ml-4">
-                                <div className="text-sm font-medium text-white">
+                              <div className="ml-2 sm:ml-4">
+                                <div className="text-xs sm:text-sm font-medium text-white">
                                   {user.name}
                                 </div>
                               </div>
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap">
                             <div className="text-sm text-gray-400">
                               {user.email}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="hidden md:table-cell px-6 py-4 whitespace-nowrap">
                             <div className="text-sm text-gray-400">
                               {user.company.name}
                             </div>
